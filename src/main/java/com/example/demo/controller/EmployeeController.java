@@ -80,7 +80,6 @@ public class EmployeeController {
 		public void deleteEmployee(@PathVariable Integer id,HttpServletRequest request) {
 			EmployeeDataEntity details  = employeeService.getByEmployeeId(id);
 			employeeService.deleteEmployee(details);
-			System.out.println("FirstCommit");
 		}
 	
 		
