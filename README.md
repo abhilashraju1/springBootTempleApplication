@@ -12,7 +12,7 @@ This include spring boot applications with MySql workbench
 Run on Spring Tool Suite to preview
 
 ## Softwares Used:
-Spring Tool Suite Version: 3.9.7.RELEASE
+Spring Tool Suite Version: 3.9.7
 
 MySQL Workbench 6.3
 
