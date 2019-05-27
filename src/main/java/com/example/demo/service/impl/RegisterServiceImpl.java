@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import com.example.demo.bean.LoginBean;
 import com.example.demo.bean.RegisterBean;
 import com.example.demo.entity.RegisterEntity;
+import com.example.demo.entity.UserDataEntity;
 import com.example.demo.repository.RegisterDataRepository;
 import com.example.demo.service.RegisterService;
 
@@ -37,8 +38,8 @@ public class RegisterServiceImpl implements RegisterService{
 	}
 
 	@Override
-	public List<RegisterEntity> getALLRegisterDetails() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<RegisterEntity> getALLUserDetails() {
+		List<RegisterEntity> entity = registerDataRepository.findAll();
+		return entity;
 	}
 }

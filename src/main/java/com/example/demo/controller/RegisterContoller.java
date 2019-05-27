@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.bean.LoginBean;
 import com.example.demo.bean.RegisterBean;
 import com.example.demo.entity.RegisterEntity;
+import com.example.demo.entity.UserDataEntity;
 import com.example.demo.service.RegisterService;
 
 @RestController
@@ -49,6 +52,16 @@ public class RegisterContoller {
 				return new ResponseEntity(HttpStatus.NOT_FOUND);
 			}
 			return null;
+		}
+		
+		@ResponseStatus(value = HttpStatus.OK)
+		@RequestMapping(value = "/getUsersList", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+		public List<RegisterEntity> getUserDetails(HttpServletRequest request) {
+
+			List<RegisterEntity> userdetails  = registerService.getALLUserDetails();
+			return userdetails;
+			
+	 
 		}
 		
 }

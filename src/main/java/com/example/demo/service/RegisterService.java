@@ -15,6 +15,6 @@ public interface RegisterService {
 	public void saveRegisterUser(RegisterBean registerBean);
 	
 	RegisterEntity validateLoginUser(LoginBean loginBean);
-	
-	List<RegisterEntity> getALLRegisterDetails();
+
+	public List<RegisterEntity> getALLUserDetails();
 }
