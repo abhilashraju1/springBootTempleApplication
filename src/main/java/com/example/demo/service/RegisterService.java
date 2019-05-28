@@ -17,4 +17,10 @@ public interface RegisterService {
 	RegisterEntity validateLoginUser(LoginBean loginBean);
 
 	public List<RegisterEntity> getALLUserDetails();
+
+	public void updateUserDetails(RegisterBean registerBean);
+
+	public RegisterEntity getUserById(Integer id);
+
+	public void deleteUser(RegisterEntity details);
 }

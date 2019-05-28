@@ -45,8 +45,9 @@ public class SevaDataServiceImpl implements SevaService{
 	public void updateSevaDetails(SevaBean sevaBean) {
 		
 		SevaDataEntity sevaDataEntity = new SevaDataEntity();
-		sevaDataEntity.setSevaName(sevaDataEntity.getSevaName());
-		sevaDataEntity.setPrice(sevaDataEntity.getPrice());
+		sevaDataEntity.setId(sevaBean.getId());
+		sevaDataEntity.setSevaName(sevaBean.getSevaName());
+		sevaDataEntity.setPrice(sevaBean.getPrice());
 		sevaDataRepository.save(sevaDataEntity);
 		
 	}

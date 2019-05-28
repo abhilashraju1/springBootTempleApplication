@@ -73,7 +73,4 @@ public class SevaController {
 		sevaService.deleteSeva(details);
 	}
 
-	
-	
-	
 }

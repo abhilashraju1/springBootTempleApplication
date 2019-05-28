@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import com.example.demo.bean.LoginBean;
 import com.example.demo.bean.RegisterBean;
 import com.example.demo.entity.RegisterEntity;
+import com.example.demo.entity.SevaDataEntity;
 import com.example.demo.entity.UserDataEntity;
 import com.example.demo.repository.RegisterDataRepository;
 import com.example.demo.service.RegisterService;
@@ -27,7 +28,6 @@ public class RegisterServiceImpl implements RegisterService{
 		registerEntity.setEmail(registerBean.getEmail());
 		registerEntity.setPhoneNumber(registerBean.getPhoneNumber());
 		registerDataRepository.save(registerEntity);
-		
 	}
 
 
@@ -41,5 +41,32 @@ public class RegisterServiceImpl implements RegisterService{
 	public List<RegisterEntity> getALLUserDetails() {
 		List<RegisterEntity> entity = registerDataRepository.findAll();
 		return entity;
+	}
+
+
+	@Override
+	public void updateUserDetails(RegisterBean registerBean) {
+		RegisterEntity registerEntity = new RegisterEntity();
+		registerEntity.setId(registerBean.getId());
+		registerEntity.setUserName(registerBean.getUserName());
+		registerEntity.setPassword(registerBean.getPassword());
+		registerEntity.setConfirmPassword(registerBean.getConfirmPassword());
+		registerEntity.setEmail(registerBean.getEmail());
+		registerEntity.setPhoneNumber(registerBean.getPhoneNumber());
+		registerDataRepository.save(registerEntity);
+	}
+
+
+	@Override
+	public RegisterEntity getUserById(Integer id) {
+		RegisterEntity entity = registerDataRepository.getOne(id);
+		return entity;
+	}
+
+
+	@Override
+	public void deleteUser(RegisterEntity details) {
+		registerDataRepository.delete(details);
+		
 	}
 }
