@@ -1,13 +1,16 @@
 package com.example.demo.entity;
 
 	import java.io.Serializable;
+import java.util.Set;
 
-	import javax.persistence.Column;
-	import javax.persistence.Entity;
-	import javax.persistence.GeneratedValue;
-	import javax.persistence.GenerationType;
-	import javax.persistence.Id;
-	import javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 	@Entity
 	@Table(name="REGISTERINFO")
@@ -34,7 +37,9 @@ package com.example.demo.entity;
 		
 		@Column(name="PHONE_NUMBER")
 		private Integer phoneNumber;
-
+		
+		/*@OneToMany(mappedBy="registerEntity",  fetch=FetchType.LAZY)
+		private Set<TempleUserRolesEntity> templeUserRolesEntity;*/
 
 		public RegisterEntity() {
 		
@@ -97,9 +102,7 @@ package com.example.demo.entity;
 			this.phoneNumber = phoneNumber;
 		}
 
-		
 		public static long getSerialversionuid() {
 			return serialVersionUID;
 		}
-
 	}

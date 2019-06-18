@@ -48,7 +48,6 @@ public class EmployeeDataServiceImpl implements EmployeeService {
 		employeeDataEntity.setTeam(employeeBean.getTeam());
 		employeeDataEntity.setDate(employeeBean.getDate());
 		employeeDataRepository.save(employeeDataEntity);
-		
 	}
 	
 	@Override

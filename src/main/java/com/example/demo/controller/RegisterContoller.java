@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.bean.LoginBean;
 import com.example.demo.bean.RegisterBean;
 import com.example.demo.entity.RegisterEntity;
-import com.example.demo.entity.SevaDataEntity;
 import com.example.demo.service.RegisterService;
 
 @RestController
